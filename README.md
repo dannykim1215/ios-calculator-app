@@ -11,7 +11,7 @@
 
 
 ### 1. 소개
-맛있는 과일 쥬스(딸기쥬스, 바나나쥬스, 파인애플쥬스, 키위쥬스, 망고쥬스, 딸기바나나쥬스, 망고키위쥬스)를 주문하면, 해당 과일 쥬스를 만드는 데에 필요한 과일의 재고를 파악한 후에 재고가 있다면 맛있는 쥬스를 만들어줍니다. 과일의 재고가 없다면, 재고가 부족하다는 것을 알려주고 과일 재고를 수정할 수 있는 기능을 제공합니다.
+사용자는 계산기 화면을 통해 숫자패드와 기호를 통해 연산을 하는 숫자 계산 결과를 확인할 수 있습니다. 
 
 ### 2. 팀원
 | [Danny](https://github.com/dannykim1215) |
@@ -20,25 +20,32 @@
 
 ### 3. UML
 ## 시퀀스 다이어그램
-![KakaoTalk_Image_2024-02-01-17-43-42](https://github.com/dannykim1215/ios-juice-maker/assets/154333967/1483ab83-ebd7-46fe-9685-6407f0f05dd3)
+![그림1](https://github.com/dannykim1215/ios-calculator-app/assets/154333967/a67aae78-70d1-43ad-a600-6b013920cf2f)
 
 ## 클래스다이어그램
-![KakaoTalk_Image_2024-02-02-09-34-46](https://github.com/dannykim1215/ios-juice-maker/assets/154333967/74b1863d-a9d5-4f08-9646-719d26461a2e)
+![그림1](https://github.com/dannykim1215/ios-calculator-app/assets/154333967/29b5a471-2b2e-490f-ad1f-2164d9d0654e)
+
 
 ### 4. 타임라인
 | 날짜 | 제목 |
 | --- | --- |
-| 24.01.15(월) | 팀 그라운드 룰즈 및 프로젝트 요구사항 파악, FruitStore, JuiceMaker 타입 정의 및 은닉화 |
-| 24.01.16(화) | updateValue를 사용한 과일 개수 변경 함수 생성, JuiceMaker init() 메소드를 추가, 쥬스메이커 함수 생성 - 딸기쥬스 생성 시, 카운트 |
-| 24.01.17(수) | FruitStore, JuiceMaker 타입 재정의, 쥬스 생성하기 전 재고 체크 기능 추가, 필요없는 주석 제거 및 코드 정리  |
+| 24.02.06(화) | 팀 그라운드 룰즈 및 계산기 프로젝트 요구사항 파악하기, Unit Test(단위테스트)를 위한 타깃 추가, CalculatorItemQueue, CalculatorItem 파일 생성, Unit Test 초기세팅 추가 |
+| 24.02.07(수) | CalculatorItemQueue 구조체 내부의 프로퍼티, 메소드 구현 및 각각의 Unit Test 케이스 추가, 연산을 하는 calculateOperations() 메소드 추가 |
+| 24.02.07(수) | STEP1 PR 요청 |
+| 24.02.07(수) | CalculatorItemQueue 구조체 내부의 queue라는 변수 네이밍 수정(-> list), CalculatorItemQueue 내부에서는 크게 필요성이 없었던 calculateOperations() 메소드를 삭제 |
+| 24.02.08(목) | 필요 없는 코드 주석 제거, 테스트와 어울리지 않는 테스트 케이스 이름 변경
+| 24.02.11(일) | 계산기 프로젝트 1주차 README 작성
+
 
 ### 5. 실행 화면
+- 없음
 
 ### 6. 트러블 슈팅
+- 없음
 
 ### 7. 팀 회고
 #### 우리팀이 잘한 점 😍
 
-#### 우리팀 개선할 점
+#### 우리팀 개선할 점 🥲
 
 

@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        operatorLabel.text = "\(formulaResult)"
+        formulaLabel.text = "\(formulaUserInput)"
         operatorLabel.text = "\(calculationOperator.rawValue)"
     }
     
@@ -69,5 +69,15 @@ class ViewController: UIViewController {
         var parsedExpression = ExpressionParser.parse(from: formulaResult)
         
         print("parse 적용: \(parsedExpression)")
+    }
+    
+    
+    @IBAction func acButtonTapped(_ sender: UIButton) {
+        formulaResult = ""
+        formulaUserInput = "0"
+        calculationOperator = .add
+        
+        formulaLabel.text = "\(formulaUserInput)"
+        operatorLabel.text = "\(calculationOperator.rawValue)"
     }
 }

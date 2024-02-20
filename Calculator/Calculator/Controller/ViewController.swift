@@ -20,4 +20,16 @@ class ViewController: UIViewController {
         
         operatorLabel.text = "\(formulaResult)"
     }
+    
+    @IBAction func numberButtonTapped(_ sender: UIButton) {
+        if let number = sender.titleLabel?.text {
+            if formulaUserInput == "0" {
+                formulaUserInput = number
+            } else {
+                formulaUserInput += number
+            }
+            
+            formulaLabel.text = "\(formulaUserInput)"
+        }
+    }
 }

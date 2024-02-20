@@ -9,7 +9,7 @@ import UIKit
 class ViewController: UIViewController {
     
     var formulaResult: String = ""
-    var formulaUserInput: String = ""
+    var formulaUserInput: String = "0"
     var calculationOperator: Operator = Operator.add
     
     @IBOutlet weak var formulaLabel: UILabel!
@@ -19,6 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         operatorLabel.text = "\(formulaResult)"
+        operatorLabel.text = "\(calculationOperator.rawValue)"
     }
     
     @IBAction func numberButtonTapped(_ sender: UIButton) {
@@ -31,5 +32,42 @@ class ViewController: UIViewController {
             
             formulaLabel.text = "\(formulaUserInput)"
         }
+    }
+    
+    @IBAction func operatorButtonTapped(_ sender: UIButton) {
+        if let currentOperator = sender.titleLabel?.text {
+            switch currentOperator {
+            case "+":
+                calculationOperator = .add
+            case "−":
+                calculationOperator = .subtract
+            case "×":
+                calculationOperator = .multiply
+            case "÷":
+                calculationOperator = .divide
+            default:
+                break
+            }
+            
+            operatorLabel.text = "\(calculationOperator.rawValue)"
+            
+            formulaResult += formulaUserInput + currentOperator
+    
+            formulaUserInput = "0"
+            formulaLabel.text = "\(formulaUserInput)"
+        }
+    }
+    
+    @IBAction func equalSignButtonTapped(_ sender: UIButton) {
+        formulaResult += formulaUserInput
+        formulaUserInput = ""
+        
+        formulaLabel.text = "\(formulaResult)"
+
+        print("formula: \(formulaResult)")
+        
+        var parsedExpression = ExpressionParser.parse(from: formulaResult)
+        
+        print("parse 적용: \(parsedExpression)")
     }
 }

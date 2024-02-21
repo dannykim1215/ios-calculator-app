@@ -51,7 +51,7 @@ class ViewController: UIViewController {
             
             operatorLabel.text = "\(calculationOperator.rawValue)"
             
-            formulaResult += formulaUserInput + currentOperator
+            formulaResult += formulaUserInput + " " + currentOperator + " "
     
             formulaUserInput = "0"
             formulaLabel.text = "\(formulaUserInput)"
@@ -66,7 +66,7 @@ class ViewController: UIViewController {
 
         print("formula: \(formulaResult)")
         
-        var parsedExpression = ExpressionParser.parse(from: formulaResult)
+        let parsedExpression = ExpressionParser.parse(from: formulaResult)
         
         print("parse 적용: \(parsedExpression)")
     }

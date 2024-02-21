@@ -34,25 +34,25 @@ enum ExpressionParser {
     }
 
     private static func componentByOperators(from input: String) -> [String] {
-//        return input.split(with: " ")
-        var components: [String] = []
-        var tempOperand: String = ""
-        
-        for char in input {
-            let str = String(char)
-            if str == "+" || str == "−" || str == "÷" || str == "×" {
-                components.append(tempOperand)
-                components.append(str)
-                tempOperand = ""
-            } else {
-                tempOperand.append(str)
-            }
-        }
-        
-        if tempOperand != "" {
-            components.append(tempOperand)
-        }
-        
-        return components
+        return input.split(with: " ")
+//        var components: [String] = []
+//        var tempOperand: String = ""
+//        
+//        for char in input {
+//            let str = String(char)
+//            if str == "+" || str == "−" || str == "÷" || str == "×" {
+//                components.append(tempOperand)
+//                components.append(str)
+//                tempOperand = ""
+//            } else {
+//                tempOperand.append(str)
+//            }
+//        }
+//        
+//        if tempOperand != "" {
+//            components.append(tempOperand)
+//        }
+//        
+//        return components
     }
 }

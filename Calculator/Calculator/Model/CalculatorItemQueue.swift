@@ -5,55 +5,57 @@
 //  Created by H on 2/20/24.
 //
 
-import Foundation
-
-struct CalculatorItemQueue<T>: CalculateItem {
-    private var inbox: [T] = []
-    private var outbox: [T] = []
+struct CalculatorItemQueue<T: CalculateItem> {
+    private var inBox: [T] = []
+    private var outBox: [T] = []
     
     var size: Int {
-        return inbox.count + outbox.count
+        return inBox.count + outBox.count
     }
     
     var isEmpty: Bool {
-        if inbox.isEmpty && outbox.isEmpty {
-            return true
-        } else {
-            return false
-        }
+        return inBox.isEmpty && outBox.isEmpty
     }
     
     var queue: [T] {
-        return inbox + outbox
+        return inBox + outBox.reversed()
     }
     
-    mutating func push(_ data: T) {
-        inbox.append(data)
+    var first: T? {
+        return inBox.isEmpty ? outBox.last : inBox.first
     }
     
-    mutating func pop() -> T? {
-        if outbox.isEmpty {
-            outbox = inbox.reversed()
-            inbox.removeAll()
+    var last: T? {
+        return outBox.isEmpty ? inBox.last : outBox.first
+    }
+    
+    mutating func push(_ newElement: T) { // enqueue
+        inBox.append(newElement)
+    }
+    
+    mutating func pop() -> T? { // dequeue
+        if outBox.isEmpty {
+            outBox = inBox.reversed()
+            inBox.removeAll()
         }
         
-        return outbox.popLast()
+        return outBox.popLast()
     }
     
     mutating func front() -> T? {
-        if outbox.isEmpty {
-            outbox = inbox.reversed()
-            inbox.removeAll()
+        if outBox.isEmpty {
+            outBox = inBox.reversed()
+            inBox.removeAll()
         }
         
-        return outbox.last
+        return outBox.last
     }
     
     mutating func rear() -> T? {
-        if inbox.isEmpty {
-            return outbox.first
+        if inBox.isEmpty {
+            return outBox.first
         }
         
-        return inbox.last
+        return inBox.last
     }
 }

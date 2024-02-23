@@ -110,13 +110,13 @@
 		2EDFFF862B844B7B008B0260 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				060891582B84380600002F9B /* CalculatorItemQueue.swift */,
 				0608915A2B84384200002F9B /* CalculatorItem.swift */,
-				2EDFFF7C2B84394E008B0260 /* String.swift */,
+				060891582B84380600002F9B /* CalculatorItemQueue.swift */,
 				0608915C2B843A8300002F9B /* Operator.swift */,
-				2EDFFF7E2B843D5C008B0260 /* Double.swift */,
-				2EDFFF802B843D7D008B0260 /* ExpressionParser.swift */,
 				2EDFFF822B844143008B0260 /* Formula.swift */,
+				2EDFFF802B843D7D008B0260 /* ExpressionParser.swift */,
+				2EDFFF7E2B843D5C008B0260 /* Double.swift */,
+				2EDFFF7C2B84394E008B0260 /* String.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
